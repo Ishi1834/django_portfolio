@@ -1,13 +1,12 @@
 {% extends 'base.html' %}{% block content %}
-<!--
+
 <div class="table-responsive-md">
-  <table class="table table-dark table-hover w-100">
+  <table class="table table-dark table-hover w-100 ">
     <thead>
       <tr>
         <th scope="col">Course</th>
         <th scope="col">Issued on</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Verification link</th>
       </tr>
     </thead>
     <tbody>
@@ -16,14 +15,12 @@
       <tr>
         <th scope="row">{{ certificate.name }}</th>
         <th scope="row">{{ certificate.issued_on }}</th>
-        <th scope="row">{{ certificate.website }}</th>
+        <th scope="row"><a href="{{ certificate.website }}" target="_blank">{{ certificate.organisation }}</a> </th>
       </tr>
-      {% endfor %}
-      {% endfor %}
+      {% endfor %} {% endfor %}
     </tbody>
   </table>
 </div>
--->
 <div class="p-3 mb-4 bg-dark rounded-3">
   <div
     class="container-fluid py-5 d-flex flex-column align-items-center"

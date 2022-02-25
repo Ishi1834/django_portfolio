@@ -38,6 +38,7 @@ class Certificate(models.Model):
 class Resume(models.Model):
     name = models.CharField(max_length=100)
     cv = models.FileField(upload_to='documents/')
+    certificates = models.ManyToManyField(Certificate)
 
     def __str__(self):
         return self.name
