@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block title %}{{ object.title }}{% endblock title %}
+{% block content %}
 
 <div class="card mb-3 w-100">
   <div class="card-body" id="blogDetail">
@@ -9,7 +11,7 @@
       <small class="text-muted">Created at : {{ object.created_on }}</small>
       <small class="text-muted">Last updated : {{ object.updated_on }}</small>
     </p>
-    <p>{{ object.content }}</p>
+    <p>{{ object.content|linebreaks }}</p>
   </div>
 </div>
 
