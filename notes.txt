@@ -1,0 +1,4 @@
+footer from https://jsfiddle.net/bootstrapious/m215fdnw
+many-to-many models https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
+made footer stick to bottom using https://codepen.io/rasaf-ibrahim/pen/gOmzPZe?editors=0110
+about container from https://getbootstrap.com/docs/5.0/examples/jumbotron/

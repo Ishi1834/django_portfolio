@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card mb-3 w-100">
+  <div class="card-body" id="blogDetail">
+    <h3 class="card-title">{{ object.title }}</h3>
+    <p class="card-text">{{ object.description }}</p>
+    <img src="{{ object.image.url }}" class="card-img-top" alt="..." />
+    <p class="card-text d-flex justify-content-between my-1">
+      <small class="text-muted">Created at : {{ object.created_on }}</small>
+      <small class="text-muted">Last updated : {{ object.updated_on }}</small>
+    </p>
+    <p>{{ object.content }}</p>
+  </div>
+</div>
+
+{% endblock content %}

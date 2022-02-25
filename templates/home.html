@@ -1,0 +1,67 @@
+{% extends 'base.html' %}{% block content %}
+<div class="p-3 mb-4 bg-dark rounded-3">
+  <div
+    class="container-fluid py-5 d-flex flex-column align-items-center"
+    id="about"
+  >
+    <h2 class="display-6 fw-bold">About me</h2>
+    <p class="col-md-8 fs-4">
+      Hi, my name's Ismail and I am a recent Mechanical Engineering graduate
+      with a 2.1 degree. I started my web development journey after the end of
+      my 3rd year exams, by learning HTML, CSS, JavaScript and React using
+      <a href="https://www.freecodecamp.org/learn/" target="_blank">
+        FreeCodeCamp</a
+      >
+      , Python and SQL using
+      <a href="https://www.coursera.org/specializations/python" target="_blank"
+        >Python for everybody speacialization</a
+      >
+      and building the projects shown below.<br />
+      Recently I learnt how to develop backend applications using the
+      <a href="https://djangoforbeginners.com/" target="_blank"
+        >Django for Beginners book</a
+      >, and by building a blog, newspaper and my portfolio website.
+    </p>
+    <h4 class="mt-4">Have a look at my resume using the button below</h4>
+    <button class="btn btn-primary mt-2" type="button">
+      <a href="{% url 'resume' %}">Resume</a>
+    </button>
+  </div>
+  <div
+    class="container-fluid py-2 d-flex flex-column align-items-center"
+    id="projects"
+  >
+    <h2 class="display-6 fw-bold">My Projects</h2>
+    <div class="row justify-content-center">
+      {% for project in object_list %}
+      <div class="card my-4 col-2 mx-4" style="width: 18rem">
+        <img src="{{ project.image.url }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <div class="text-center my-3">
+            {% for stack in project.tech_stack.all %} {{ stack }} {% endfor %}
+          </div>
+          <p class="card-text">{{ project.description }}</p>
+
+          <div class="d-flex justify-content-center">
+            <a
+              href="{{ project.website }}"
+              class="btn btn-primary mx-2"
+              target="_blank"
+              >Website</a
+            >
+            <a
+              href="{{ project.github }}"
+              class="btn btn-primary mx-2"
+              target="_blank"
+              >Repository</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="blog" id="blog"></div>
+{% endblock content %}

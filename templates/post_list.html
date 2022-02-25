@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% block content %}
+
+<div class="w-100 my-4 p-3 bg-dark rounded-3">
+  <h2 class="text-center mb-4">Blog Posts</h2>
+  {% for post in object_list %}
+  <div class="card m-4" id="blogList">
+    <img src="{{ post.image.url }}" class="card-img-top" alt="..." />
+    <div class="card-body"><a href="{% url 'post_detail' post.pk %}">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.description }}</p>
+      <p class="card-text">
+        <small class="text-muted">Last updated {{ post.updated_on }}</small>
+      </p>
+    </div></a>
+  </div>
+  {% endfor %}
+</div>
+<div class="banner">
+  <h2>Thank you for checking out my Blog</h2>
+</div>
+{% endblock content %}
